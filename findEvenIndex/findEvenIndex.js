@@ -10,6 +10,13 @@ Let's look at another one.
 You are given the array {1,100,50,-51,1,1}:
 Your function will return the index 1, because at the 1st position of the array, the sum of left side of the index ({1}) and the sum of the right side of the index ({50,-51,1,1}) both equal 1.
 */
+
+/* 
+ * @param {array}
+ * 
+ */
+
+
 function findEvenIndex(arr) {
   let leftSum = 0;
   for (let i = 0; i < arr.length; i++) {

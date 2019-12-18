@@ -11,5 +11,16 @@
  * @return {ListNode}
  */
 var mergeTwoLists = function(l1, l2) {
+    // Recursive solution
+    if (l1 === null || l2 === null) {
+        return l1 || l2;
+    }
     
+    if (l1.val > l2.val) {
+        l2.next = mergeTwoLists(l1, l2.next);
+        return l2;
+    } else {
+        l1.next = mergeTwoLists(l1.next, l2);
+        return l1;
+    }    
 };

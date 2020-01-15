@@ -53,6 +53,7 @@ var inorderTraversal = function(root) {
       curr = stack.pop();
       output.push(curr.val);
       
+      // reset root
       curr = curr.right;
   }
   

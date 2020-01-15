@@ -5,6 +5,7 @@
 var threeSum = function(nums) {
     let output = [];
     
+    // sort the array
     nums.sort((a, b) => (a - b));
     
     for (let i = 0; i < nums.length - 1; i++) {

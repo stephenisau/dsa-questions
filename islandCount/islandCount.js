@@ -16,6 +16,7 @@ const getNumOfIslands = (matrix) => {
 }
 
 const markIslands = (matrix, rows, cols, i, j) => {
+  // BFS SOLUTION
   let queue = [];
   queue.push([i, j]);
   while (queue.length > 0) {

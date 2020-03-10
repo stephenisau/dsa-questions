@@ -38,5 +38,8 @@ function reconstruct(preorder, inorder) {
   } 
   // Because preorder traversal adds the root first, we grab the root here
   let root = preorder[0]
+  function _helper(inorder, postorder, toInorder, low, high) {
+    
+  }
   
 }

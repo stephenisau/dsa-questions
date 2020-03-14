@@ -32,6 +32,8 @@ const kSortedArrays = (arrays) => {
  * 
  */
 
+// QUICK NOTE: VALID HEAP, BUT ARRAY IS NOT SORTED 100%
+
 class HeapNode {
   /**
    * Heap Node class

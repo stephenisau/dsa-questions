@@ -1,5 +1,17 @@
 # https://leetcode.com/problems/container-with-most-water/
 
+# PSEUDOCODE:
+# initialize max_area variable
+# initialize pointers at the edges of array
+# while the pointers don't converge
+    # get the area of the current points in the array by calculating the minimum of the two points * the space between
+    # set our max_area variable to be the max value between this area and the current max_area variable
+    # if the left value < right value
+        # increment our left pointer
+    # else
+        # decrement our right pointer
+# return the area
+
 def max_area(height):
     max_area = 0
     i = 0

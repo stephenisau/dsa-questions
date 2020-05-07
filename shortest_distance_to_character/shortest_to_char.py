@@ -7,7 +7,7 @@ PSEUDOCODE
 O(n^2) solution
 """
 
-def shortestToChar(self, S: str, C: str) -> List[int]:
+def shortestToChar(S: str, C: str) -> List[int]:
     """
     :type S: str
     :type C: str
@@ -25,6 +25,13 @@ def shortestToChar(self, S: str, C: str) -> List[int]:
         output.append(min([abs(j - i) for j in differences]))
     return output
 
+def shortest_to_char(S: str, C: str) -> List[int]:
+    """
+    :type S: str
+    :type C: str
+    :rtype List[int]
+    """
+    pass
 
 
 if __name__ == "__main__":

@@ -54,4 +54,29 @@ print(test_heap_solution()) # this should be silent if assertions are true
 
 
 # QUICKSELECT SOLUTION
-# pattern to recognize for this solution: kth largest el == (n - k) smallest el
+# pattern to recognize for this solution: kth largest el == (n - k) smallest 
+import random
+def find_k_largest(nums, k):
+    idx = len(nums) - k
+    low = 0
+    high = len(nums) - 1
+    while low < high:
+        j = partition(nums, low, high)
+        if j < k:
+            low = j + 1
+        elif j > k:
+            high = j - 1
+        else:
+            break
+    return nums[k]
+
+def _partition(arr, low, high):
+    i = low
+    j = high + 1
+    while True:
+        while i < high and less(arr[i + 1], arr[low]):
+            while 
+
+arr = [3,2,3,1,2,4,5,5,6]
+k = 4
+print(find_k_largest(arr, k))

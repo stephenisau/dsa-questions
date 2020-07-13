@@ -17,23 +17,23 @@ const getNumOfIslands = (matrix) => {
 
 const markIslands = (matrix, rows, cols, i, j) => {
   // BFS SOLUTION
-  let queue = [];
-  queue.push([i, j]);
-  while (queue.length > 0) {
-    let [x, y] = queue.pop();
+  let stack = [];
+  stack.push([i, j]);
+  while (stack.length > 0) {
+    let [x, y] = stack.pop();
     if (matrix[x][y] === 1) {
       matrix[x][y] = -1;
-      pushIfValid(queue, rows, cols, x - 1, y);
-      pushIfValid(queue, rows, cols, x + 1, y);
-      pushIfValid(queue, rows, cols, x, y - 1);
-      pushIfValid(queue, rows, cols, x, y + 1);
+      pushIfValid(stack, rows, cols, x - 1, y);
+      pushIfValid(stack, rows, cols, x + 1, y);
+      pushIfValid(stack, rows, cols, x, y - 1);
+      pushIfValid(stack, rows, cols, x, y + 1);
     }
   }
 }
 
-const pushIfValid = (queue, rows, cols, x, y) => {
+const pushIfValid = (stack, rows, cols, x, y) => {
   if (x >= 0 && x < rows && y >= 0 && y < cols) {
-    queue.push([x, y]);
+    stack.push([x, y]);
   }
 }
 

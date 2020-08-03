@@ -46,3 +46,27 @@ class Logger:
                 return False
         self.data[message] = timestamp
         return True
+
+
+from collections import deque
+class Logger1:
+    def __init__(self):
+        self._messages = set()
+        self._message_queue = deque()
+
+    def should_print_message(self, timestamp, message):
+        # if the queue has things, pull it out and check the timestamp difference
+        while self._message_queue:
+            msg, ts = self._message_queue[0]
+            if timestamp - ts >= 10:
+                self._message_queue.popleft()
+                self._messages.remove(msg)
+            else:
+                break
+
+        if msg not in self._messages:
+            self._messages.add(msg)
+            self._message_queue.append((msg, timestamp))
+            return True
+        else:
+            return False

@@ -20,15 +20,27 @@ Return the following binary tree:
  */
 
 
- const buildTree = (inorder, postorder) => {
+function TreeNode(val) {
+  this.val = (val === undefined ? 0 : val)
+  this.left = (left === undefined ? null : left)
+  this.right = (right === undefined ? null : right)
+}
 
-  if (!inorder || !postorder) {
-    return;
+function buildTree(inorder, postorder) {
+
+  function _helper(left, right) {
+    if (!inorder || !postorder) {
+      return;
+    }
+    let root = new TreeNode(postorder.pop());
+    let idx = inorder.indexOf(root.val);
+
+
+    root.right = this.buildTree(inorder.slice(idx + 1), postorder);
+    root.left = this.buildTree(inorder.slice(0, idx), postorder);
+    return root;
   }
-  let root = new TreeNode(postorder.pop());
-  let idx = inorder.index(root.val);
 
-  root.right = buildTree(inorder[])
-  
-  
- }
+  return _helper(inorder, postorder);
+
+}

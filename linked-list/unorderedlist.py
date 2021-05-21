@@ -2,7 +2,7 @@ from node import Node
 
 class UnorderedList:
 
-    def __init__(self, val = None):
+    def __init__(self, val=None):
         self.head = val
         self.count = 0
 
@@ -14,13 +14,13 @@ class UnorderedList:
         """
         return self.head == None
     
-    def add(self, val):
+    def add(self, item):
         """Add item to unordered list
 
         Args:
             item (any): Add an item to the unordered list
         """
-        newItem = Node(val)
+        newItem = Node(item)
         newItem.setNext(self.head)
         self.head = newItem
         self.count += 1
@@ -45,7 +45,6 @@ class UnorderedList:
         curr = self.head
         found = False
         while curr is not None and not found:
-            print("curr: ", curr.getVal())
             if curr.getVal() == val:
                 found = True
             else:
